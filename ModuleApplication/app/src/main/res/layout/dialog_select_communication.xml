@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="사용할 통신 방식을 선택하세요."
+        android:textSize="12sp"
+        android:padding="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_wifi"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/BtnTheme"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_marginHorizontal="8dp"
+            android:paddingVertical="16dp"
+            android:drawableTop="@drawable/ic_wifi"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:text="WiFi(MQTT)"/>
+
+        <Button
+            android:id="@+id/btn_ble"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:theme="@style/BtnTheme"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_marginHorizontal="8dp"
+            android:paddingVertical="16dp"
+            android:drawableTop="@drawable/ic_bluetooth"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:text="Bluetooth LE"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>
