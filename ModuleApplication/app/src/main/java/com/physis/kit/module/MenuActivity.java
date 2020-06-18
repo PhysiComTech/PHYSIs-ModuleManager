@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.physis.kit.module.ble.*;
-import com.physis.kit.module.dialog.NotifyDialog;
+import com.physis.kit.module.dialog.MenuDialog;
 import com.physis.kit.module.mqtt.BuzzerMqttActivity;
 import com.physis.kit.module.mqtt.DTH22MqttActivity;
 import com.physis.kit.module.mqtt.IlluminationMqttActivity;
@@ -30,6 +30,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     private static final int COMMUNICATION_WIFI = 24;
     private static final int COMMUNICATION_BLE = 25;
 
+    private MenuDialog communicationDialog = null;
+
     private int moduleType;
 
     @Override
@@ -47,6 +49,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = tag == COMMUNICATION_WIFI ?
                     getMQTTModuleIntent() : getBLEModuleIntent();
             startActivity(intent);
+            communicationDialog.dismiss();
         }else{
             moduleType = tag;
             showSelectedCommunicationDialog();
@@ -98,7 +101,8 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         btnBle.setTag(COMMUNICATION_BLE);
         btnWifi.setOnClickListener(this);
         btnBle.setOnClickListener(this);
-        new NotifyDialog().show(MenuActivity.this, null, view, "닫기");
+        communicationDialog = new MenuDialog();
+        communicationDialog.show(MenuActivity.this, null, view, "닫기");
     }
 
     private void init() {

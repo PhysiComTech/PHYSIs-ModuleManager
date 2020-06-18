@@ -97,6 +97,7 @@ public class DTH22BleActivity extends PHYSIsBLEActivity implements View.OnClickL
             toastMsg = "연결할 Physi Kit가 존재하지 않습니다.";
         }
         Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
+        LoadingDialog.dismiss();
     }
 
 

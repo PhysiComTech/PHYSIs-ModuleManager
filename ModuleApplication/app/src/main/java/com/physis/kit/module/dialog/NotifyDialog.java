@@ -11,6 +11,8 @@ import android.view.View;
 
 public class NotifyDialog {
 
+    private AlertDialog alertDialog = null;
+
     public void show(Context context, String title, String message,
                      String btnText, DialogInterface.OnClickListener clickListener)
     {
@@ -68,5 +70,12 @@ public class NotifyDialog {
                 .setNegativeButton(btnText, clickListener)
                 .setPositiveButton(android.R.string.cancel, null)
                 .setCancelable(false).create().show();
+    }
+
+    public void dismiss(){
+        if(alertDialog != null){
+            alertDialog.dismiss();
+            alertDialog = null;
+        }
     }
 }

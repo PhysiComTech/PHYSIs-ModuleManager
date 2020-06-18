@@ -20,8 +20,8 @@ void setup() {
 
 void loop() {
 
-  float humidity = dht.readHumidity();
-  float temperature = dht.readTemperature();
+  int humidity = (int)dht.readHumidity();
+  int temperature = (int)dht.readTemperature();
   if (isnan(humidity) || isnan(temperature)) {
     Serial.println("DHT sensor error!");
     return;
@@ -29,4 +29,8 @@ void loop() {
 
   String sendData = String(humidity) + "," + String(temperature);
   physisBLE.sendMessage(sendData);
+
+  Serial.println(sendData);
+
+  delay(2000);
 }

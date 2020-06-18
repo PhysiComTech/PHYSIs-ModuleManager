@@ -1,6 +1,6 @@
 #include <PHYSIs_Master.h>
 
-#define CDS_PIN   A0
+#define CDS_PIN   A1
 
 PHYSIs_BLE physisBLE;
 
@@ -19,4 +19,6 @@ void loop() {
   int cdsPercent = map(cdsValue, 0, 1023, 0, 100);
 
   physisBLE.sendMessage(String(cdsPercent));
+
+  delay(1000);
 }

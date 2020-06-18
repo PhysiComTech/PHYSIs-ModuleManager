@@ -93,6 +93,7 @@ public class IlluminationBleActivity extends PHYSIsBLEActivity implements View.O
             toastMsg = "연결할 Physi Kit가 존재하지 않습니다.";
         }
         Toast.makeText(getApplicationContext(), toastMsg, Toast.LENGTH_SHORT).show();
+        LoadingDialog.dismiss();
     }
 
 
